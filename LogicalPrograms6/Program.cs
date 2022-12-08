@@ -3,26 +3,19 @@ class Program
 {
     public static void Main(string[] args)
     {
-       
-            int n;
-            Console.Write("Enter a number: ");
-            n = int.Parse(Console.ReadLine());
 
-            int i;
-            bool isPrime = true;
-            for (i = 2; i < n; i++)
+         int ReverseNumber(int n)
+        {
+            int reverse = 0;
+
+            while (n > 0)
             {
-                if (n % i == 0)
-                {
-                    isPrime = false;
-                    break;
-                }
+                int remainder = n % 10;
+                reverse = (reverse * 10) + remainder;
+                n /= 10;
             }
 
-            if (isPrime)
-                Console.WriteLine("{0} is a prime number.", n);
-            else
-                Console.WriteLine("{0} is not a prime number.", n);
+            return reverse;
         }
     }
-
+}
