@@ -1,18 +1,28 @@
-﻿class Program
+﻿using System;
+class Program
 {
     public static void Main(string[] args)
     {
-        int n1 = 0, n2 = 1, n3, i, number;
-        Console.Write("Enter the number of elements: ");
-        number = int.Parse(Console.ReadLine());
-        Console.Write(n1 + " " + n2 + " "); //printing 0 and 1    
+       
+            int n;
+            Console.Write("Enter a number: ");
+            n = int.Parse(Console.ReadLine());
 
-        for (i = 2; i < number; ++i) //loop starts from 2 because 0 and 1 are already printed    
-        {
-            n3 = n1 + n2;
-            Console.Write(n3 + " ");
-            n1 = n2;
-            n2 = n3;
+            int i;
+            bool isPrime = true;
+            for (i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime)
+                Console.WriteLine("{0} is a prime number.", n);
+            else
+                Console.WriteLine("{0} is not a prime number.", n);
         }
     }
-}
+
