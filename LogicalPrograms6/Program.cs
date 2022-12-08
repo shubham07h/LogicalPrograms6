@@ -1,21 +1,17 @@
 ﻿using System;
+
+
 class Program
 {
-    public static void Main(string[] args)
+    public  double CelsiusToFahrenheit(double celsius)
     {
+        double fahrenheit = celsius * 9 / 5 + 32;
+        return fahrenheit;
+    }
 
-         int ReverseNumber(int n)
-        {
-            int reverse = 0;
-
-            while (n > 0)
-            {
-                int remainder = n % 10;
-                reverse = (reverse * 10) + remainder;
-                n /= 10;
-            }
-
-            return reverse;
-        }
+    public static double FahrenheitToCelsius(double fahrenheit)
+    {
+        double celsius = (fahrenheit - 32) * 5 / 9;
+        return celsius;
     }
 }
